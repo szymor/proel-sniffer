@@ -1,14 +1,13 @@
 fsm = require "ppfsm"
 
 function assert_generator(compare)
-  function callback(num)
+  return function (num)
     if num == compare then
 	  print("[PASSED] Flat "..num)
 	else
 	  print("[FAILED] Got "..num..", should be "..compare)
 	end
   end
-  return callback
 end
 
 function csv_line_parser(ts, val)
