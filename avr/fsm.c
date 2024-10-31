@@ -31,6 +31,13 @@ void fsm_set_cb(fsm_cb callback)
 
 void fsm_push_event(uint8_t raising, uint32_t period)
 {
+	// reset ring tone state if waiting too long
+	if (state == STATE_RINGTONE && period > 1000000)
+	{
+		state = STATE_IDLE;
+	}
+	// -----------------------------------------
+
 	if (state == STATE_IDLE)
 	{
 		if (!raising)
@@ -94,16 +101,6 @@ void fsm_push_event(uint8_t raising, uint32_t period)
 	}
 	else if (state == STATE_RINGTONE)
 	{
-		if (period > 5000000)
-		{
-			if (!raising)
-			{
-				state = STATE_RESET_START;
-			}
-			else
-			{
-				state = STATE_IDLE;
-			}
-		}
+		// do nothing
 	}
 }
