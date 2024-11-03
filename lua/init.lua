@@ -6,6 +6,9 @@ topic = "proelsniff/"..uid.."/"
 uptime = 0
 
 wifi.eventmon.register(wifi.eventmon.STA_GOT_IP, function(T)
+  print("IP: "..T["IP"])
+  print("Netmask: "..T["netmask"])
+  print("Gateway: "..T["gateway"])
   m = mqtt.Client(clientid, 120)
   m:lwt(topic.."uptime", 0, 0, 0)
   -- Tencent Cloud MQTT server in China
@@ -29,17 +32,8 @@ tmr.create():alarm(10000, tmr.ALARM_AUTO, function()
   end
 end)
 
-function gpio_cb(level, when, eventcount)
-  if eventcount > 1 then
-    print("Skipped: "..eventcount)
-    fsm.reset()
-  else
-    fsm.push_event(level == 1, when)
-  end
-end
+print("MQTT server: "..mqtt_server)
+print("Topic root: "..topic)
 
-fsm = require "ppfsm"
-gpio.mode(8, gpio.INT, gpio.PULLUP) -- GPIO15
-gpio.trig(8, "both", gpio_cb)
-
-print("Hello! I am "..clientid.."!")
+-- m:publish(topic.."flat", <flat_number_here>, 0, 0)
+-- m:publish(topic.."idle_voltage", <idle_voltage_in_string_here>, 0, 0)
