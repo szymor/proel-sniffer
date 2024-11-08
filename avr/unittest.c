@@ -51,59 +51,59 @@ int main(int argc, char *argv[])
 	cnt = 0;
 	exnum = 1;
 	expected[0] = 44;
-	run_test("basic waveform", "../lua/testdata/basic.csv");
+	run_test("basic waveform", "../testdata/basic.csv");
 
 	cnt = 0;
 	exnum = 1;
 	expected[0] = 44;
-	run_test("double ringbell", "../lua/testdata/double_ringbell.csv");
+	run_test("double ringbell", "../testdata/double_ringbell.csv");
 
 	cnt = 0;
 	exnum = 1;
 	expected[0] = 44;
-	run_test("basic with noise", "../lua/testdata/basic_with_noise.csv");
+	run_test("basic with noise", "../testdata/basic_with_noise.csv");
 
 	cnt = 0;
 	exnum = 3;
 	expected[0] = 44;
 	expected[1] = 38;
 	expected[2] = 44;
-	run_test("three in a row", "../lua/testdata/three-in-a-row.csv");
+	run_test("three in a row", "../testdata/three-in-a-row.csv");
 
 	cnt = 0;
 	exnum = 1;
 	expected[0] = 44;
-	run_test("ds0", "../lua/testdata/ds0.csv");
+	run_test("ds0", "../testdata/ds0.csv");
 
 	cnt = 0;
 	exnum = 1;
 	expected[0] = 44;
-	run_test("ds1", "../lua/testdata/ds1.csv");
+	run_test("ds1", "../testdata/ds1.csv");
 
 	cnt = 0;
 	exnum = 1;
 	expected[0] = 44;
-	run_test("ds2", "../lua/testdata/ds2.csv");
+	run_test("ds2", "../testdata/ds2.csv");
 
 	cnt = 0;
 	exnum = 1;
 	expected[0] = 44;
-	run_test("ds3", "../lua/testdata/ds3.csv");
+	run_test("ds3", "../testdata/ds3.csv");
 
 	cnt = 0;
 	exnum = 1;
 	expected[0] = 44;
-	run_test("ds4", "../lua/testdata/ds4.csv");
+	run_test("ds4", "../testdata/ds4.csv");
 
 	cnt = 0;
 	exnum = 1;
 	expected[0] = 44;
-	run_test("ds5", "../lua/testdata/ds5.csv");
+	run_test("ds5", "../testdata/ds5.csv");
 
 	cnt = 0;
 	exnum = 1;
 	expected[0] = 38;
-	run_test("ds6", "../lua/testdata/ds6.csv");
+	run_test("ds6", "../testdata/ds6.csv");
 
 	return 0;
 }
