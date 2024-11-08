@@ -42,6 +42,11 @@ void run_test(char *title, char *csv_path)
 		}
 	}
 	fclose(csv);
+
+	if (exnum != cnt)
+	{
+		printf("  [FAILED] %d entrance(s) missing!\n", exnum - cnt);
+	}
 }
 
 int main(int argc, char *argv[])
@@ -104,6 +109,20 @@ int main(int argc, char *argv[])
 	exnum = 1;
 	expected[0] = 38;
 	run_test("ds6", "../testdata/ds6.csv");
+
+	cnt = 0;
+	exnum = 2;
+	expected[0] = 44;
+	expected[1] = 44;
+	run_test("mix05", "../testdata/mix05.csv");
+
+	cnt = 0;
+	exnum = 4;
+	expected[0] = 44;
+	expected[1] = 44;
+	expected[2] = 38;
+	expected[3] = 44;
+	run_test("mix1360", "../testdata/mix1360.csv");
 
 	return 0;
 }

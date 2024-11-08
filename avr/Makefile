@@ -15,7 +15,7 @@ flash:
 	avrdude -c usbasp -p m16 -U flash:w:main.hex -U lfuse:w:0x1E:m -U hfuse:w:0xD9:m
 
 $(PROJECT_TEST): unittest.c fsm.c
-	gcc -o $@ $^
+	gcc -g -o $@ $^
 
 $(PROJECT): main.c fsm.c serial.c
 	avr-gcc -o $@ -mmcu=$(TARGET) -O2 -DF_CPU=16000000UL $^
