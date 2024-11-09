@@ -60,7 +60,7 @@ ISR(INT1_vect)
 
 void flat_callback(uint8_t flatno)
 {
-	//PORTB = ~flatno;
+	PORTB = ~flatno;
 	printf("m:publish(topic..\"flat\", %d, 0, 0)\r\n", flatno);
 }
 
@@ -84,18 +84,23 @@ void main(void)
 	// enable external interrupt
 	GICR = _BV(INT0) | _BV(INT1);
 
-	fsm_reset();
 	fsm_set_cb(flat_callback);
+	fsm_reset();
 
 	DDRB = 0xff;
 
-	printf("Proel Sniffer MCU\r\n");
 	while (1)
 	{
+		// reset the fsm after several seconds (just in case)
+		if (count & 0x0800)
+		{
+			count = 0;
+			fsm_reset();
+		}
+		// process the cyclic buffer of events
 		if (cbegin != cend)
 		{
 			fsm_push_event(ts[cbegin].lsp & 1, ts[cbegin].v32 >> 1);
-			//printf("%d %ld\r\n", ts[cbegin].lsp & 1, ts[cbegin].v32 >> 1);
 			cycle_forward(cbegin);
 		}
 	}

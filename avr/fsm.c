@@ -3,17 +3,6 @@
 #include <stddef.h>
 #include <stdio.h>
 
-enum State
-{
-	STATE_IDLE,
-	STATE_RESET_START,
-	STATE_RESET_END,
-	STATE_FLAT_START,
-	STATE_FLAT_END,
-	STATE_RINGTONE,
-	STATE_END
-};
-
 static enum State state = STATE_IDLE;
 static fsm_cb flat_cb = NULL;
 static uint8_t flatno = 0;
@@ -21,7 +10,11 @@ static uint8_t flatno = 0;
 void fsm_reset(void)
 {
 	state = STATE_IDLE;
-	flat_cb = NULL;
+}
+
+enum State fsm_get_state(void)
+{
+	return state;
 }
 
 void fsm_set_cb(fsm_cb callback)
@@ -31,13 +24,6 @@ void fsm_set_cb(fsm_cb callback)
 
 void fsm_push_event(uint8_t raising, uint32_t period)
 {
-	// reset ring tone state if waiting too long
-	if (state == STATE_RINGTONE && period > 1000000)
-	{
-		state = STATE_IDLE;
-	}
-	// -----------------------------------------
-
 	if (state == STATE_IDLE)
 	{
 		if (!raising)
@@ -92,15 +78,47 @@ void fsm_push_event(uint8_t raising, uint32_t period)
 			{
 				flat_cb(flatno);
 			}
-			state = STATE_RINGTONE;
+			state = STATE_RINGTONE_START;
 		}
 		else
 		{
 			state = STATE_IDLE;
 		}
 	}
+	else if (state == STATE_RINGTONE_START)
+	{
+		// start of ringtone OR reset-like end
+		if (raising && period > 200000 && period < 500000)
+		{
+			state = STATE_IDLE;
+		}
+		else
+		{
+			state = STATE_RINGTONE;
+		}
+	}
 	else if (state == STATE_RINGTONE)
 	{
-		// do nothing
+		if (!raising)
+		{
+			if (period > 8000000)
+			{
+				//printf("Ring!\n");
+				// even a few seconds may pass between ringtone and end signal
+				state = STATE_RESET_START;
+			}
+			else if (period > 50000)
+			{
+				//printf("Ring!\n");
+				state = STATE_RINGTONE_START;
+			}
+		}
+		else
+		{
+			if (period > 50000)
+			{
+				state = STATE_IDLE;
+			}
+		}
 	}
 }

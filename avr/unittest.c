@@ -24,7 +24,7 @@ void check_cb(uint8_t flatno)
 
 void run_test(char *title, char *csv_path)
 {
-	puts(title);
+	printf(":: TEST %s\n", title);
 	fsm_reset();
 	fsm_set_cb(check_cb);
 	FILE *csv = fopen(csv_path, "r");
@@ -43,6 +43,11 @@ void run_test(char *title, char *csv_path)
 	}
 	fclose(csv);
 
+	if (fsm_get_state() != STATE_IDLE)
+	{
+		printf("  [WARNING] FSM ended in a non-idle state.\n");
+	}
+
 	if (exnum != cnt)
 	{
 		printf("  [FAILED] %d entrance(s) missing!\n", exnum - cnt);
@@ -51,8 +56,6 @@ void run_test(char *title, char *csv_path)
 
 int main(int argc, char *argv[])
 {
-	printf("== PPFSM unit tests ==\n\n");
-
 	cnt = 0;
 	exnum = 1;
 	expected[0] = 44;
@@ -123,6 +126,14 @@ int main(int argc, char *argv[])
 	expected[2] = 38;
 	expected[3] = 44;
 	run_test("mix1360", "../testdata/mix1360.csv");
+
+	cnt = 0;
+	exnum = 4;
+	expected[0] = 44;
+	expected[1] = 44;
+	expected[2] = 44;
+	expected[3] = 44;
+	run_test("mix2525", "../testdata/mix2525.csv");
 
 	return 0;
 }
