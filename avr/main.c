@@ -61,7 +61,7 @@ ISR(INT1_vect)
 void flat_callback(uint8_t flatno)
 {
 	PORTB = ~flatno;
-	printf("m:publish(topic..\"flat\", %d, 0, 0)\r\n", flatno);
+	printf("m:publish(topic..\"flat\", %d, 2, 0)\r\n", flatno);
 }
 
 void main(void)
@@ -79,7 +79,7 @@ void main(void)
 
 	// default INT0 and INT1 config as tri-z input is NOT ok
 	PORTD = _BV(PIND2) | _BV(PIND3);
-	// configure INT0 as falling edge, INT1 as raising edge
+	// configure INT0 as falling edge, INT1 as rising edge
 	MCUCR = _BV(ISC01) | _BV(ISC11) | _BV(ISC10);
 	// enable external interrupt
 	GICR = _BV(INT0) | _BV(INT1);
@@ -91,11 +91,22 @@ void main(void)
 
 	while (1)
 	{
+		// heartbeat
+		if (count & 0x0010)
+		{
+			PORTB |= _BV(7);
+		}
+		else
+		{
+			PORTB &= ~_BV(7);
+		}
 		// reset the fsm after several seconds (just in case)
 		if (count & 0x0800)
 		{
 			count = 0;
 			fsm_reset();
+			// publish (mocked) idle voltage
+			printf("m:publish(topic..\"idle_voltage\", \"%d.0\", 2, 0)\r\n", 8);
 		}
 		// process the cyclic buffer of events
 		if (cbegin != cend)

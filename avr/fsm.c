@@ -22,18 +22,18 @@ void fsm_set_cb(fsm_cb callback)
 	flat_cb = callback;
 }
 
-void fsm_push_event(uint8_t raising, uint32_t period)
+void fsm_push_event(uint8_t rising, uint32_t period)
 {
 	if (state == STATE_IDLE)
 	{
-		if (!raising)
+		if (!rising)
 		{
 			state = STATE_RESET_START;
 		}
 	}
 	else if (state == STATE_RESET_START)
 	{
-		if (raising && period > 200000 && period < 500000)
+		if (rising && period > 200000 && period < 500000)
 		{
 			flatno = 0;
 			state = STATE_RESET_END;
@@ -45,7 +45,7 @@ void fsm_push_event(uint8_t raising, uint32_t period)
 	}
 	else if (state == STATE_RESET_END)
 	{
-		if (!raising && period > 180000 && period < 250000)
+		if (!rising && period > 180000 && period < 250000)
 		{
 			state = STATE_FLAT_START;
 		}
@@ -56,7 +56,7 @@ void fsm_push_event(uint8_t raising, uint32_t period)
 	}
 	else if (state == STATE_FLAT_START)
 	{
-		if (raising && period > 5 && period < 30)
+		if (rising && period > 5 && period < 30)
 		{
 			++flatno;
 			state = STATE_FLAT_END;
@@ -68,11 +68,11 @@ void fsm_push_event(uint8_t raising, uint32_t period)
 	}
 	else if (state == STATE_FLAT_END)
 	{
-		if (!raising && period > 150 && period < 300)
+		if (!rising && period > 150 && period < 300)
 		{
 			state = STATE_FLAT_START;
 		}
-		else if (!raising && period > 30000 && period < 1000000)
+		else if (!rising && period > 30000 && period < 1000000)
 		{
 			if (flat_cb != NULL)
 			{
@@ -88,7 +88,7 @@ void fsm_push_event(uint8_t raising, uint32_t period)
 	else if (state == STATE_RINGTONE_START)
 	{
 		// start of ringtone OR reset-like end
-		if (raising && period > 200000 && period < 500000)
+		if (rising && period > 200000 && period < 500000)
 		{
 			state = STATE_IDLE;
 		}
@@ -99,7 +99,7 @@ void fsm_push_event(uint8_t raising, uint32_t period)
 	}
 	else if (state == STATE_RINGTONE)
 	{
-		if (!raising)
+		if (!rising)
 		{
 			if (period > 8000000)
 			{

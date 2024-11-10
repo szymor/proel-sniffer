@@ -20,6 +20,6 @@ typedef void (*fsm_cb)(uint8_t flatno);
 void fsm_reset(void);
 enum State fsm_get_state(void);
 void fsm_set_cb(fsm_cb callback);
-void fsm_push_event(uint8_t raising, uint32_t period);
+void fsm_push_event(uint8_t rising, uint32_t period);
 
 #endif
