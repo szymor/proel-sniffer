@@ -1,19 +1,22 @@
 $fn = 50;
 
+thick = 1;
 w = 50;
 h = 80;
 r = 5;
 
-rim_h = 10;
+rim_h = 25;
+pcb_elevation = 3;
+pcb_thick = 1.5;
 
-head_d = 9;
-body_d = 5;
+head_d = 8;
+body_d = 4;
 
 // y coordinate of upper screwholes
-yy_up = h / 2 - 5 - 3 - head_d - 5;
-yy_down = -h / 2 + 2;
-xx_left = -w / 2 + 2;
-xx_right = w / 2 - 2;
+yy_up = h / 2 - 5 - 3 - 8 - 5;
+yy_down = -h / 2 + 3;
+xx_left = -w / 2 + 3;
+xx_right = w / 2 - 3;
 
 module base_shape(w, h, r)
 {
@@ -46,22 +49,13 @@ module rim_2d()
     difference()
     {
         base_shape(w, h, r);
-        base_shape(w, h, r - 1);
-    }
-}
-
-module screwhole()
-{
-    difference()
-    {
-        cylinder(h = 5, d1 = 8, d2 = 4);
-        cylinder(h = 6, d = 1);
+        base_shape(w, h, r - thick);
     }
 }
 
 module arch(size)
 {
-    rotate([90, 0, 90]) linear_extrude(2, center = true) difference()
+    rotate([90, 0, 90]) linear_extrude(thick + 1, center = true) difference()
     {
         square(size);
         intersection()
@@ -74,9 +68,29 @@ module arch(size)
 
 module rimhole(size, r)
 {
-    translate([0, 0, rim_h/2]) cube([2, size, rim_h], center = true);
+    zthick = rim_h - thick - pcb_elevation - pcb_thick;
+    translate([0, 0, zthick/2 + thick + pcb_elevation + pcb_thick]) cube([thick + 1, size, zthick], center = true);
     translate([0, -r - size/2, rim_h - r]) arch(r);
     translate([0, r + size/2, rim_h - r]) rotate([0, 0, 180]) arch(r);
+}
+
+module arkhole(r)
+{
+    translate([-thick/2, -10/2 + r, r]) minkowski()
+    {
+        cube([thick, 10 - 2*r, 10 - 2*r]);
+        sphere(r = r);
+    }
+}
+
+module usbhole(r)
+{
+    //translate([0, 0, 3.5]) cube([12, thick + 1, 7], true);
+    translate([-12/2 + r, -thick/2, r]) minkowski()
+    {
+        cube([12 - 2*r, thick, 7 - 2*r]);
+        sphere(r = r);
+    }
 }
 
 module rim()
@@ -84,24 +98,103 @@ module rim()
     difference()
     {
         linear_extrude(rim_h) rim_2d();
-        translate([-w/2 - r, yy_up - 10, 0])
-            rimhole(9, 5);
-         translate([w/2 + r, yy_up - 10, 0])
-            rimhole(9, 5);
-         translate([0, -h/2 - r + 0.5, 0])
+        translate([-w/2 - r + thick/2, yy_up - 10, thick + pcb_elevation + pcb_thick])
+            arkhole(2);
+         translate([w/2 + r - thick/2, yy_up - 10, thick + pcb_elevation + pcb_thick])
+            arkhole(2);
+         translate([0, -h/2 - r + thick/2, thick + pcb_elevation + pcb_thick])
+            usbhole(2);
+        /*
+        translate([-w/2 - r + thick/2, yy_up - 10, 0])
+            rimhole(9, 2);
+         translate([w/2 + r - thick/2, yy_up - 10, 0])
+            rimhole(9, 2);
+         translate([0, -h/2 - r + thick/2, 0])
          rotate([0, 0, 90])
-            rimhole(15, 5);
+            rimhole(15, 2);
+        */
     }
 }
 
-linear_extrude(1) base_2d();
+module screwstand()
+{
+    cylinder(pcb_elevation, d1 = 10, d2 = 7);
+}
 
-translate([xx_left, yy_down, 0]) screwhole();
-translate([xx_right, yy_down, 0]) screwhole();
-translate([xx_left, yy_up, 0]) screwhole();
-translate([xx_right, yy_up, 0]) screwhole();
+module screwhole()
+{
+    cylinder(2, d = 5);
+    cylinder(thick + pcb_elevation + 1, d = 1.5);
+}
 
+module base()
+{
+    difference()
+    {
+        union()
+        {
+            linear_extrude(thick) base_2d();
+            translate([xx_left, yy_down, thick]) screwstand();
+            translate([xx_right, yy_down, thick]) screwstand();
+            translate([xx_left, yy_up, thick]) screwstand();
+            translate([xx_right, yy_up, thick]) screwstand();
+        }
+        translate([xx_left, yy_down, 0]) screwhole();
+        translate([xx_right, yy_down, 0]) screwhole();
+        translate([xx_left, yy_up, 0]) screwhole();
+        translate([xx_right, yy_up, 0]) screwhole();
+    }
+}
+
+lid_screwstand_h = rim_h - thick*2 - pcb_elevation - pcb_thick;
+
+echo("Base screwstand height: ", pcb_elevation);
+echo("Lid screwstand height: ", lid_screwstand_h);
+
+module lid_screwstand()
+{
+    cylinder(lid_screwstand_h, d1 = 12, d2 = 7);
+}
+
+module lid_screwhole()
+{
+    cylinder(lid_screwstand_h + 0.5, d = 1.5);
+}
+
+module lid()
+{
+    difference()
+    {
+        union()
+        {
+            linear_extrude(thick) base_shape(w, h, r - thick);
+            translate([xx_left, yy_down, thick]) lid_screwstand();
+            translate([xx_right, yy_down, thick]) lid_screwstand();
+            translate([xx_left, yy_up, thick]) lid_screwstand();
+            translate([xx_right, yy_up, thick]) lid_screwstand();
+        }
+        translate([xx_left, yy_down, thick]) lid_screwhole();
+        translate([xx_right, yy_down, thick]) lid_screwhole();
+        translate([xx_left, yy_up, thick]) lid_screwhole();
+        translate([xx_right, yy_up, thick]) lid_screwhole();
+    }
+}
+
+module holder()
+{
+    difference()
+    {
+        translate([0, 0, rim_h]) linear_extrude(80 - rim_h) rim_2d();
+        translate([-w/2 - r - 1, 0, -0.5]) cube([w + 2*r + 2, h, 81]);
+        translate([0, 20, 60]) sphere(d = 120);
+    }
+}
+
+//lid();
+base();
 rim();
+holder();
+
 
 echo("Horizontal screw distance: ", xx_right - xx_left);
 echo("Vertical screw distance: ", yy_up - yy_down);
