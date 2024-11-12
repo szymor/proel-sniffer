@@ -7,7 +7,7 @@ r = 5;
 
 rim_h = 25;
 pcb_elevation = 3;
-pcb_thick = 1.5;
+pcb_thick = 1.8;
 
 head_d = 8;
 body_d = 4;
@@ -124,7 +124,7 @@ module screwstand()
 module screwhole()
 {
     cylinder(2, d = 5);
-    cylinder(thick + pcb_elevation + 1, d = 1.5);
+    cylinder(thick + pcb_elevation + 1, d = 2.2);
 }
 
 module base()
@@ -158,16 +158,17 @@ module lid_screwstand()
 
 module lid_screwhole()
 {
-    cylinder(lid_screwstand_h + 0.5, d = 1.5);
+    cylinder(lid_screwstand_h + 0.5, d = 1.9);
 }
 
 module lid()
 {
+    tolerance = 0.1;
     difference()
     {
         union()
         {
-            linear_extrude(thick) base_shape(w, h, r - thick);
+            linear_extrude(thick) base_shape(w, h, r - thick - tolerance);
             translate([xx_left, yy_down, thick]) lid_screwstand();
             translate([xx_right, yy_down, thick]) lid_screwstand();
             translate([xx_left, yy_up, thick]) lid_screwstand();
@@ -194,6 +195,7 @@ module holder()
 base();
 rim();
 holder();
+//translate([0, 0, rim_h]) rotate([0, 180, 0]) lid();
 
 
 echo("Horizontal screw distance: ", xx_right - xx_left);
