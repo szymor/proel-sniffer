@@ -103,6 +103,23 @@ void main(void)
 		// reset the fsm after several seconds (just in case)
 		if (count & 0x0800)
 		{
+#ifdef DEBUG
+			const char state2string[][8] = {
+				"idle",
+				"rstart",
+				"rend",
+				"fstart",
+				"fend",
+				"rtstart",
+				"rtend"
+			};
+			// publish debug info
+			printf("m:publish(topic..\"debug_last_state\", \"%s\", 2, 0)\r\n", state2string[fsm_get_debug_property(DP_STATE)]);
+			printf("m:publish(topic..\"debug_reset\", \"%s\", 2, 0)\r\n", state2string[fsm_get_debug_property(DP_RESET_PERIOD)]);
+			printf("m:publish(topic..\"debug_end\", \"%s\", 2, 0)\r\n", state2string[fsm_get_debug_property(DP_END_PERIOD)]);
+			printf("m:publish(topic..\"debug_flat_low\", \"%s\", 2, 0)\r\n", state2string[fsm_get_debug_property(DP_FLAT_LOW_PERIOD)]);
+			printf("m:publish(topic..\"debug_flat_high\", \"%s\", 2, 0)\r\n", state2string[fsm_get_debug_property(DP_FLAT_HIGH_PERIOD)]);
+#endif
 			count = 0;
 			fsm_reset();
 			// publish (mocked) idle voltage

@@ -43,7 +43,11 @@ void run_test(char *title, char *csv_path)
 	}
 	fclose(csv);
 
-	if (fsm_get_state() != STATE_IDLE)
+	printf("  [DEBUG] Reset period: %d\n", fsm_get_debug_property(DP_RESET_PERIOD));
+	printf("  [DEBUG] End period: %d\n", fsm_get_debug_property(DP_END_PERIOD));
+	printf("  [DEBUG] Flat low period: %d\n", fsm_get_debug_property(DP_FLAT_LOW_PERIOD));
+	printf("  [DEBUG] Flat high period: %d\n", fsm_get_debug_property(DP_FLAT_HIGH_PERIOD));
+	if (fsm_get_debug_property(DP_STATE) != STATE_IDLE)
 	{
 		printf("  [WARNING] FSM ended in a non-idle state.\n");
 	}

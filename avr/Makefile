@@ -18,7 +18,7 @@ $(PROJECT_TEST): unittest.c fsm.c
 	gcc -g -o $@ $^
 
 $(PROJECT): main.c fsm.c serial.c
-	avr-gcc -o $@ -mmcu=$(TARGET) -O2 -DF_CPU=16000000UL $^
+	avr-gcc -o $@ -mmcu=$(TARGET) -O2 -DDEBUG -DF_CPU=16000000UL $^
 
 %.hex: %
 	avr-objcopy -F elf32-avr $< $@

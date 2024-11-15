@@ -15,10 +15,19 @@ enum State
 	STATE_END
 };
 
+enum DebugProperty
+{
+	DP_STATE,
+	DP_RESET_PERIOD,
+	DP_END_PERIOD,
+	DP_FLAT_LOW_PERIOD,
+	DP_FLAT_HIGH_PERIOD
+};
+
 typedef void (*fsm_cb)(uint8_t flatno);
 
 void fsm_reset(void);
-enum State fsm_get_state(void);
+uint32_t fsm_get_debug_property(enum DebugProperty dp);
 void fsm_set_cb(fsm_cb callback);
 void fsm_push_event(uint8_t rising, uint32_t period);
 

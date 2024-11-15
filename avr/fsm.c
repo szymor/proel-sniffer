@@ -7,14 +7,39 @@ static enum State state = STATE_IDLE;
 static fsm_cb flat_cb = NULL;
 static uint8_t flatno = 0;
 
+// debug properties
+static uint32_t reset_period = 0;
+static uint32_t end_period = 0;
+static uint32_t flat_low_sum = 0;
+static uint32_t flat_high_sum = 0;
+
 void fsm_reset(void)
 {
 	state = STATE_IDLE;
+	flatno = 0;
+	reset_period = 0;
+	end_period = 0;
+	flat_low_sum = 0;
+	flat_high_sum = 0;
 }
 
-enum State fsm_get_state(void)
+uint32_t fsm_get_debug_property(enum DebugProperty dp)
 {
-	return state;
+	switch (dp)
+	{
+		case DP_STATE:
+			return state;
+		case DP_RESET_PERIOD:
+			return reset_period;
+		case DP_END_PERIOD:
+			return end_period;
+		case DP_FLAT_LOW_PERIOD:
+			return flat_low_sum / flatno;
+		case DP_FLAT_HIGH_PERIOD:
+			return flat_high_sum / (flatno - 1);
+		default:
+			return 0;
+	}
 }
 
 void fsm_set_cb(fsm_cb callback)
@@ -35,6 +60,11 @@ void fsm_push_event(uint8_t rising, uint32_t period)
 	{
 		if (rising && period > 200000 && period < 500000)
 		{
+			// preset debug properties
+			reset_period = period;
+			flat_low_sum = 0;
+			flat_high_sum = 0;
+
 			flatno = 0;
 			state = STATE_RESET_END;
 		}
@@ -58,6 +88,9 @@ void fsm_push_event(uint8_t rising, uint32_t period)
 	{
 		if (rising && period > 5 && period < 30)
 		{
+			// debug
+			flat_low_sum += period;
+
 			++flatno;
 			state = STATE_FLAT_END;
 		}
@@ -70,6 +103,9 @@ void fsm_push_event(uint8_t rising, uint32_t period)
 	{
 		if (!rising && period > 150 && period < 300)
 		{
+			// debug
+			flat_high_sum += period;
+
 			state = STATE_FLAT_START;
 		}
 		else if (!rising && period > 30000 && period < 1000000)
@@ -90,6 +126,9 @@ void fsm_push_event(uint8_t rising, uint32_t period)
 		// start of ringtone OR reset-like end
 		if (rising && period > 200000 && period < 500000)
 		{
+			// debug
+			end_period = period;
+
 			state = STATE_IDLE;
 		}
 		else
