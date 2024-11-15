@@ -102,7 +102,7 @@ module rim()
             arkhole(2);
          translate([w/2 + r - thick/2, yy_up - 10, thick + pcb_elevation + pcb_thick])
             arkhole(2);
-         translate([0, -h/2 - r + thick/2, thick + pcb_elevation + pcb_thick])
+         translate([0, -h/2 - r + thick/2, thick + pcb_elevation + pcb_thick - 3.5 + 0.9])
             usbhole(2);
         /*
         translate([-w/2 - r + thick/2, yy_up - 10, 0])
@@ -161,6 +161,11 @@ module lid_screwhole()
     cylinder(lid_screwstand_h + 0.5, d = 1.9);
 }
 
+module lid_ark_hole()
+{
+    square([5, 10], true);
+}
+
 module lid()
 {
     tolerance = 0.1;
@@ -168,7 +173,12 @@ module lid()
     {
         union()
         {
-            linear_extrude(thick) base_shape(w, h, r - thick - tolerance);
+            linear_extrude(thick) difference()
+            {
+                base_shape(w, h, r - thick - tolerance);
+                translate([-w/2-r +2.5, yy_up - 10]) lid_ark_hole();
+                translate([w/2+r -2.5, yy_up - 10]) lid_ark_hole();
+            }
             translate([xx_left, yy_down, thick]) lid_screwstand();
             translate([xx_right, yy_down, thick]) lid_screwstand();
             translate([xx_left, yy_up, thick]) lid_screwstand();
@@ -195,7 +205,7 @@ module holder()
 base();
 rim();
 holder();
-//translate([0, 0, rim_h]) rotate([0, 180, 0]) lid();
+translate([0, 0, rim_h]) rotate([0, 180, 0]) lid();
 
 
 echo("Horizontal screw distance: ", xx_right - xx_left);
