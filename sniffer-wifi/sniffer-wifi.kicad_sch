@@ -1157,6 +1157,551 @@
 				)
 			)
 		)
+		(symbol "Connector_Generic:Conn_02x08_Odd_Even"
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 1.27 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_02x08_Odd_Even"
+				(at 1.27 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic connector, double row, 02x08, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_2x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_02x08_Odd_Even_1_1"
+				(rectangle
+					(start -1.27 -10.033)
+					(end 0 -10.287)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -7.493)
+					(end 0 -7.747)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 5.207)
+					(end 0 4.953)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 7.747)
+					(end 0 7.493)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 8.89)
+					(end 3.81 -11.43)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start 3.81 -10.033)
+					(end 2.54 -10.287)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 3.81 -7.493)
+					(end 2.54 -7.747)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 3.81 -4.953)
+					(end 2.54 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 3.81 -2.413)
+					(end 2.54 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 3.81 0.127)
+					(end 2.54 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 3.81 2.667)
+					(end 2.54 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 3.81 5.207)
+					(end 2.54 4.953)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 3.81 7.747)
+					(end 2.54 7.493)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 7.62 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -2.54 180)
+					(length 3.81)
+					(name "Pin_10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 0)
+					(length 3.81)
+					(name "Pin_11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -5.08 180)
+					(length 3.81)
+					(name "Pin_12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -7.62 0)
+					(length 3.81)
+					(name "Pin_13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -7.62 180)
+					(length 3.81)
+					(name "Pin_14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -10.16 0)
+					(length 3.81)
+					(name "Pin_15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -10.16 180)
+					(length 3.81)
+					(name "Pin_16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 7.62 180)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 5.08 0)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 5.08 180)
+					(length 3.81)
+					(name "Pin_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 3.81)
+					(name "Pin_5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 2.54 180)
+					(length 3.81)
+					(name "Pin_6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 0 180)
+					(length 3.81)
+					(name "Pin_8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Device:C"
 			(pin_numbers hide)
 			(pin_names
@@ -2698,151 +3243,6 @@
 				)
 			)
 			(symbol "Jumper_2_Bridged_1_1"
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "Jumper:Jumper_2_Open"
-			(pin_numbers hide)
-			(pin_names
-				(offset 0) hide)
-			(exclude_from_sim yes)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "JP"
-				(at 0 2.794 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Jumper_2_Open"
-				(at 0 -2.286 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Jumper, 2-pole, open"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "Jumper SPST"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Jumper* TestPoint*2Pads* TestPoint*Bridge*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Jumper_2_Open_0_0"
-				(circle
-					(center -2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Jumper_2_Open_0_1"
-				(arc
-					(start 1.524 1.27)
-					(mid 0 1.778)
-					(end -1.524 1.27)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Jumper_2_Open_1_1"
 				(pin passive line
 					(at -5.08 0 0)
 					(length 2.54)
@@ -4437,10 +4837,22 @@
 		(uuid "26b9440b-e7d4-415a-ae76-75f86fa08245")
 	)
 	(junction
+		(at 93.98 171.45)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2d8723ad-a69a-43d6-8c30-5a6f9de1536f")
+	)
+	(junction
 		(at 63.5 21.59)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3b4bdaf3-9a22-4944-8124-4476b75134a4")
+	)
+	(junction
+		(at 93.98 184.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3e6c3407-1ae6-43b0-b575-5b5437dde358")
 	)
 	(junction
 		(at 20.32 59.69)
@@ -4467,10 +4879,22 @@
 		(uuid "56d7bd63-7901-4de3-8c53-e17d08cc6792")
 	)
 	(junction
+		(at 93.98 181.61)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5a1a6eda-ffee-4ffb-9341-95c59db1bf0a")
+	)
+	(junction
 		(at 85.09 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5de50c29-c684-42c5-9e0d-437ed7cd9fe5")
+	)
+	(junction
+		(at 93.98 168.91)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "69e668c8-0d48-4ca6-8223-b57f79e96183")
 	)
 	(junction
 		(at 205.74 87.63)
@@ -4483,6 +4907,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "839976a4-40ad-407b-b5b9-edda0ce415dd")
+	)
+	(junction
+		(at 93.98 179.07)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "850a96d1-fdf5-427e-98c4-082114ff4546")
 	)
 	(junction
 		(at 259.08 133.35)
@@ -4501,6 +4931,18 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9e3b465d-927d-4699-b825-5a2d45f0e8f8")
+	)
+	(junction
+		(at 93.98 173.99)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ac06c260-ceb4-4ecc-bf78-0718614db78f")
+	)
+	(junction
+		(at 218.44 133.35)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b54afda9-13bc-4c26-96fe-c41ac2ee22ef")
 	)
 	(junction
 		(at 151.13 133.35)
@@ -4527,6 +4969,12 @@
 		(uuid "c5909dd5-b919-44f1-af7b-b1676ba6d478")
 	)
 	(junction
+		(at 93.98 176.53)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cc3a9997-d8bd-4e74-aae6-0fd0f7d5eab7")
+	)
+	(junction
 		(at 92.71 104.14)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4543,12 +4991,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e93f6cda-8261-4053-9d86-b7c835558012")
-	)
-	(junction
-		(at 222.25 133.35)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fd6fadf8-629b-4013-8801-0f6bb21b8375")
 	)
 	(no_connect
 		(at 60.96 60.96)
@@ -4576,16 +5018,6 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 133.35) (xy 229.87 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "039bde54-e714-4c23-bef9-74066f96980a")
-	)
-	(wire
-		(pts
 			(xy 92.71 101.6) (xy 92.71 104.14)
 		)
 		(stroke
@@ -4603,6 +5035,16 @@
 			(type default)
 		)
 		(uuid "06ece0d0-c83d-442a-ab7f-e0b8976ef370")
+	)
+	(wire
+		(pts
+			(xy 93.98 176.53) (xy 93.98 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "082e16f0-62e7-40a2-9a76-1b2cc28513d8")
 	)
 	(wire
 		(pts
@@ -4643,6 +5085,16 @@
 			(type default)
 		)
 		(uuid "1bf16051-e2a2-4c05-9a24-10cd71af0ab1")
+	)
+	(wire
+		(pts
+			(xy 92.71 181.61) (xy 93.98 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1dd6ac0e-1639-4f72-a336-1d35a756f6ab")
 	)
 	(wire
 		(pts
@@ -4696,6 +5148,16 @@
 	)
 	(wire
 		(pts
+			(xy 93.98 171.45) (xy 93.98 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "32facac1-c280-4afe-b32b-072eb30f88b1")
+	)
+	(wire
+		(pts
 			(xy 35.56 167.64) (xy 38.1 167.64)
 		)
 		(stroke
@@ -4713,6 +5175,16 @@
 			(type default)
 		)
 		(uuid "333b6f6a-45ce-4f55-a702-fbfe86269442")
+	)
+	(wire
+		(pts
+			(xy 93.98 181.61) (xy 93.98 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "38075744-bfa5-4fc8-a9a5-35e42635d16a")
 	)
 	(wire
 		(pts
@@ -4836,6 +5308,26 @@
 	)
 	(wire
 		(pts
+			(xy 93.98 184.15) (xy 93.98 186.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c0ee77b-c9d1-4bf8-8e44-91ccde6d5089")
+	)
+	(wire
+		(pts
+			(xy 93.98 168.91) (xy 93.98 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4f9fc9fe-57a4-4759-8f9e-5676a270826b")
+	)
+	(wire
+		(pts
 			(xy 91.44 104.14) (xy 92.71 104.14)
 		)
 		(stroke
@@ -4873,6 +5365,16 @@
 			(type default)
 		)
 		(uuid "552e8cc3-43dc-4216-a3f2-8953db0aa402")
+	)
+	(wire
+		(pts
+			(xy 93.98 179.07) (xy 93.98 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "553ae593-4345-4659-97c1-63a16811455f")
 	)
 	(wire
 		(pts
@@ -4923,6 +5425,16 @@
 			(type default)
 		)
 		(uuid "61855f45-2bcb-4b8b-95fc-e9a1d63c43c0")
+	)
+	(wire
+		(pts
+			(xy 93.98 173.99) (xy 93.98 176.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "624093fa-1c1f-445d-90f9-b0230881f587")
 	)
 	(wire
 		(pts
@@ -5016,6 +5528,16 @@
 	)
 	(wire
 		(pts
+			(xy 92.71 171.45) (xy 93.98 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "74420edd-6b1b-4b23-9aa5-67d822cee23c")
+	)
+	(wire
+		(pts
 			(xy 100.33 91.44) (xy 102.87 91.44)
 		)
 		(stroke
@@ -5066,6 +5588,26 @@
 	)
 	(wire
 		(pts
+			(xy 92.71 166.37) (xy 93.98 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "809dd12b-11a1-42eb-b755-ede10cb68c9d")
+	)
+	(wire
+		(pts
+			(xy 92.71 176.53) (xy 93.98 176.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87f84965-d181-4e20-90df-b4b7dc497c48")
+	)
+	(wire
+		(pts
 			(xy 135.89 58.42) (xy 135.89 59.69)
 		)
 		(stroke
@@ -5076,6 +5618,16 @@
 	)
 	(wire
 		(pts
+			(xy 92.71 168.91) (xy 93.98 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8ac11354-ad49-431f-8444-3523e0d43f3a")
+	)
+	(wire
+		(pts
 			(xy 96.52 22.86) (xy 96.52 21.59)
 		)
 		(stroke
@@ -5083,6 +5635,16 @@
 			(type default)
 		)
 		(uuid "8f132899-06b9-4329-81c8-b55a0d29968c")
+	)
+	(wire
+		(pts
+			(xy 92.71 184.15) (xy 93.98 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "907889ae-116e-4fae-916a-ee400e2566d2")
 	)
 	(wire
 		(pts
@@ -5156,6 +5718,16 @@
 	)
 	(wire
 		(pts
+			(xy 218.44 133.35) (xy 229.87 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e369584-3f89-4bd8-a201-4245eba52d8a")
+	)
+	(wire
+		(pts
 			(xy 135.89 59.69) (xy 135.89 60.96)
 		)
 		(stroke
@@ -5176,7 +5748,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 133.35) (xy 222.25 133.35)
+			(xy 209.55 133.35) (xy 218.44 133.35)
 		)
 		(stroke
 			(width 0)
@@ -5266,6 +5838,26 @@
 	)
 	(wire
 		(pts
+			(xy 93.98 166.37) (xy 93.98 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aad4df38-7a25-4338-bbcd-61c15d12f2c2")
+	)
+	(wire
+		(pts
+			(xy 92.71 179.07) (xy 93.98 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ac75f654-c0d9-4402-8a1f-6770c0cdc6e2")
+	)
+	(wire
+		(pts
 			(xy 209.55 121.92) (xy 207.01 121.92)
 		)
 		(stroke
@@ -5343,6 +5935,16 @@
 			(type default)
 		)
 		(uuid "b5f5c290-a678-4e73-94c3-aaa691a06eac")
+	)
+	(wire
+		(pts
+			(xy 92.71 173.99) (xy 93.98 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "baa699d9-cf15-4db1-a345-654e189ffb35")
 	)
 	(wire
 		(pts
@@ -5566,7 +6168,7 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 133.35) (xy 222.25 137.16)
+			(xy 218.44 133.35) (xy 218.44 137.16)
 		)
 		(stroke
 			(width 0)
@@ -5617,7 +6219,7 @@
 		(uuid "02bd6f64-1816-4671-a330-13e979fbb3b5")
 	)
 	(label "F4"
-		(at 101.6 168.91 180)
+		(at 80.01 176.53 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5749,7 +6351,7 @@
 		(uuid "490ea61d-3e6d-413f-b365-4f0fde4273f4")
 	)
 	(label "F5"
-		(at 93.98 168.91 180)
+		(at 80.01 179.07 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5804,7 +6406,7 @@
 		(uuid "6a1e0b9f-0087-48ad-9f23-0ed97f14e49c")
 	)
 	(label "F2"
-		(at 116.84 168.91 180)
+		(at 80.01 171.45 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5903,7 +6505,7 @@
 		(uuid "8a460bbc-a05c-497a-9361-42309d446395")
 	)
 	(label "F3"
-		(at 109.22 168.91 180)
+		(at 80.01 173.99 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5936,7 +6538,7 @@
 		(uuid "9c673d4c-8a34-4caf-bcef-70627c3cf852")
 	)
 	(label "F0"
-		(at 132.08 168.91 180)
+		(at 80.01 166.37 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6024,7 +6626,7 @@
 		(uuid "b880bb53-9525-4861-a52b-3d7ae25f7ea7")
 	)
 	(label "F6"
-		(at 86.36 168.91 180)
+		(at 80.01 181.61 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6057,7 +6659,7 @@
 		(uuid "c33a6982-a92b-480c-b801-28454ec8ec15")
 	)
 	(label "F7"
-		(at 78.74 168.91 180)
+		(at 80.01 184.15 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6167,7 +6769,7 @@
 		(uuid "e71e0aa7-b65d-496e-a535-47d35e47c456")
 	)
 	(label "F1"
-		(at 124.46 168.91 180)
+		(at 80.01 168.91 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6667,87 +7269,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Jumper:Jumper_2_Open")
-		(at 116.84 173.99 270)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0f5a7821-18d1-4c2a-acd8-cca1413b97b3")
-		(property "Reference" "JP7"
-			(at 119.38 172.7199 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "F2"
-			(at 119.38 175.2599 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 116.84 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 116.84 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Jumper, 2-pole, open"
-			(at 116.84 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "4a80eba1-1863-4f3f-b2c7-52cb6628ae0e")
-		)
-		(pin "1"
-			(uuid "491a1d37-30c7-450d-a5d3-508a78e08d00")
-		)
-		(instances
-			(project "sniffer-wifi"
-				(path "/db70fe1b-d2b4-43f9-a78d-d9b71a224de5"
-					(reference "JP7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
-		(at 132.08 179.07 0)
+		(at 93.98 186.69 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "130712fc-1d30-4454-8bf1-800ac49be80a")
-		(property "Reference" "#PWR052"
-			(at 132.08 185.42 0)
+		(uuid "11d40053-c884-4f5a-af13-6614e0bcd371")
+		(property "Reference" "#PWR053"
+			(at 93.98 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6756,7 +7288,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 132.08 184.15 0)
+			(at 93.98 191.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6764,7 +7296,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 132.08 179.07 0)
+			(at 93.98 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6773,7 +7305,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 132.08 179.07 0)
+			(at 93.98 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6782,7 +7314,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 132.08 179.07 0)
+			(at 93.98 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6791,82 +7323,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "50d31db1-0e03-41ee-a66c-84eab77f416d")
+			(uuid "2c106e22-6e6a-4496-bac8-9d5cb3b3b297")
 		)
 		(instances
-			(project "sniffer-wifi"
+			(project ""
 				(path "/db70fe1b-d2b4-43f9-a78d-d9b71a224de5"
-					(reference "#PWR052")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Jumper:Jumper_2_Open")
-		(at 124.46 173.99 270)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "145d9b86-ab87-4b1d-9e1b-c1b61050ca05")
-		(property "Reference" "JP8"
-			(at 127 172.7199 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "F1"
-			(at 127 175.2599 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 124.46 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 124.46 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Jumper, 2-pole, open"
-			(at 124.46 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "0f749533-6bad-4522-957e-2d1bcc97b811")
-		)
-		(pin "1"
-			(uuid "fed1020e-6989-49fc-aaa8-52915af945aa")
-		)
-		(instances
-			(project "sniffer-wifi"
-				(path "/db70fe1b-d2b4-43f9-a78d-d9b71a224de5"
-					(reference "JP8")
+					(reference "#PWR053")
 					(unit 1)
 				)
 			)
@@ -7026,7 +7488,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 222.25 140.97 0)
+		(at 218.44 140.97 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7035,7 +7497,7 @@
 		(fields_autoplaced yes)
 		(uuid "15efe3fa-42bb-4855-9c94-1de0bd1046a3")
 		(property "Reference" "C12"
-			(at 225.171 139.7578 0)
+			(at 222.25 139.6999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7043,8 +7505,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100p"
-			(at 225.171 142.1821 0)
+		(property "Value" "1n"
+			(at 222.25 142.2399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7053,7 +7515,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 223.2152 144.78 0)
+			(at 219.4052 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7062,7 +7524,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 222.25 140.97 0)
+			(at 218.44 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7071,7 +7533,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 222.25 140.97 0)
+			(at 218.44 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7854,72 +8316,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 101.6 179.07 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "27bffc4c-728f-444e-9248-c2ec36dd3a85")
-		(property "Reference" "#PWR048"
-			(at 101.6 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 101.6 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 101.6 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 101.6 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 101.6 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8efb0166-794a-45c9-b3a3-97599364d3c4")
-		)
-		(instances
-			(project "sniffer-wifi"
-				(path "/db70fe1b-d2b4-43f9-a78d-d9b71a224de5"
-					(reference "#PWR048")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:FerriteBead")
 		(at 162.56 133.35 270)
 		(mirror x)
@@ -8119,76 +8515,6 @@
 			(project ""
 				(path "/db70fe1b-d2b4-43f9-a78d-d9b71a224de5"
 					(reference "#PWR018")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Jumper:Jumper_2_Open")
-		(at 93.98 173.99 270)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2cff6d1f-ee04-4274-b92f-06d91e2affe0")
-		(property "Reference" "JP4"
-			(at 96.52 172.7199 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "F5"
-			(at 96.52 175.2599 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 93.98 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 93.98 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Jumper, 2-pole, open"
-			(at 93.98 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "24a20aa8-e9bf-4767-ba7c-524fdd230df0")
-		)
-		(pin "1"
-			(uuid "64c4a7f0-c66e-446c-b1c3-144175811bc4")
-		)
-		(instances
-			(project "sniffer-wifi"
-				(path "/db70fe1b-d2b4-43f9-a78d-d9b71a224de5"
-					(reference "JP4")
 					(unit 1)
 				)
 			)
@@ -8614,76 +8940,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Jumper:Jumper_2_Open")
-		(at 132.08 173.99 270)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "389a1664-1dbf-4e40-8c08-e9a842944f58")
-		(property "Reference" "JP9"
-			(at 134.62 172.7199 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "F0"
-			(at 134.62 175.2599 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 132.08 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 132.08 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Jumper, 2-pole, open"
-			(at 132.08 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "509e0f16-b717-4b1e-9d22-f67e4516285b")
-		)
-		(pin "1"
-			(uuid "e81676ee-06c9-4a47-b680-0bb9adfb6489")
-		)
-		(instances
-			(project "sniffer-wifi"
-				(path "/db70fe1b-d2b4-43f9-a78d-d9b71a224de5"
-					(reference "JP9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 33.02 135.89 0)
 		(unit 1)
@@ -8744,76 +9000,6 @@
 			(project ""
 				(path "/db70fe1b-d2b4-43f9-a78d-d9b71a224de5"
 					(reference "#PWR016")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Jumper:Jumper_2_Open")
-		(at 101.6 173.99 270)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "401c2075-bb1b-4669-96f2-e21a44a530c0")
-		(property "Reference" "JP5"
-			(at 104.14 172.7199 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "F4"
-			(at 104.14 175.2599 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 101.6 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 101.6 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Jumper, 2-pole, open"
-			(at 101.6 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "cfea7b4a-d630-4d7d-8cfa-0a97d7440f97")
-		)
-		(pin "1"
-			(uuid "ccfe3348-a083-456b-8774-699a2028c82c")
-		)
-		(instances
-			(project "sniffer-wifi"
-				(path "/db70fe1b-d2b4-43f9-a78d-d9b71a224de5"
-					(reference "JP5")
 					(unit 1)
 				)
 			)
@@ -9453,72 +9639,6 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 93.98 179.07 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5a18f566-be4e-4978-bfae-50d8df6dd7fb")
-		(property "Reference" "#PWR047"
-			(at 93.98 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 93.98 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 93.98 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 93.98 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 93.98 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d88bd190-6826-4022-9562-d6334bd25d05")
-		)
-		(instances
-			(project "sniffer-wifi"
-				(path "/db70fe1b-d2b4-43f9-a78d-d9b71a224de5"
-					(reference "#PWR047")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
 		(at 20.32 68.58 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9924,72 +10044,6 @@
 			(project "sniffer-wifi"
 				(path "/db70fe1b-d2b4-43f9-a78d-d9b71a224de5"
 					(reference "Q2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 109.22 179.07 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "64400dda-74d6-4a53-9a21-0365c72a723b")
-		(property "Reference" "#PWR049"
-			(at 109.22 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 109.22 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 109.22 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 109.22 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 109.22 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f0943c8b-b8a5-4638-a6c5-10e2a48df2f8")
-		)
-		(instances
-			(project "sniffer-wifi"
-				(path "/db70fe1b-d2b4-43f9-a78d-d9b71a224de5"
-					(reference "#PWR049")
 					(unit 1)
 				)
 			)
@@ -10530,76 +10584,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Jumper:Jumper_2_Open")
-		(at 86.36 173.99 270)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "767802ee-1452-4419-ac95-f4b33fa356b9")
-		(property "Reference" "JP3"
-			(at 88.9 172.7199 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "F6"
-			(at 88.9 175.2599 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 86.36 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 86.36 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Jumper, 2-pole, open"
-			(at 86.36 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "5045ff2d-86c2-4ac9-a73e-5d6c5c2945c8")
-		)
-		(pin "1"
-			(uuid "b27f4d96-104c-42ac-84f1-88e26980dbfe")
-		)
-		(instances
-			(project "sniffer-wifi"
-				(path "/db70fe1b-d2b4-43f9-a78d-d9b71a224de5"
-					(reference "JP3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 205.74 76.2 0)
 		(unit 1)
@@ -11017,7 +11001,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 222.25 144.78 0)
+		(at 218.44 144.78 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11026,7 +11010,7 @@
 		(fields_autoplaced yes)
 		(uuid "861df4c5-c822-4499-9274-4f8d5e1c7cb7")
 		(property "Reference" "#PWR044"
-			(at 222.25 151.13 0)
+			(at 218.44 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11035,7 +11019,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 222.25 149.86 0)
+			(at 218.44 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11043,7 +11027,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 222.25 144.78 0)
+			(at 218.44 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11052,7 +11036,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 222.25 144.78 0)
+			(at 218.44 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11061,7 +11045,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 222.25 144.78 0)
+			(at 218.44 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11825,72 +11809,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 86.36 179.07 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "af639de2-659a-4175-844c-4077274f4c5e")
-		(property "Reference" "#PWR046"
-			(at 86.36 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 86.36 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 86.36 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 86.36 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 86.36 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "6dee8a4d-bd9e-4511-8db2-ca208adde2b1")
-		)
-		(instances
-			(project "sniffer-wifi"
-				(path "/db70fe1b-d2b4-43f9-a78d-d9b71a224de5"
-					(reference "#PWR046")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+3V3")
 		(at 135.89 50.8 0)
 		(unit 1)
@@ -12112,72 +12030,6 @@
 			(project ""
 				(path "/db70fe1b-d2b4-43f9-a78d-d9b71a224de5"
 					(reference "U3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 78.74 179.07 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b0bf84f9-cf22-4cde-b69d-1fae483a222a")
-		(property "Reference" "#PWR045"
-			(at 78.74 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 78.74 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 78.74 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 78.74 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 78.74 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ae23349d-7e8d-4590-97d9-157c520a5898")
-		)
-		(instances
-			(project "sniffer-wifi"
-				(path "/db70fe1b-d2b4-43f9-a78d-d9b71a224de5"
-					(reference "#PWR045")
 					(unit 1)
 				)
 			)
@@ -12456,76 +12308,6 @@
 			(project ""
 				(path "/db70fe1b-d2b4-43f9-a78d-d9b71a224de5"
 					(reference "D5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Jumper:Jumper_2_Open")
-		(at 78.74 173.99 270)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c234218a-cd7b-4b54-b199-2223b3f59070")
-		(property "Reference" "JP2"
-			(at 81.28 172.7199 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "F7"
-			(at 81.28 175.2599 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 78.74 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 78.74 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Jumper, 2-pole, open"
-			(at 78.74 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "fb427cfc-2298-4811-bbec-92c73fbc8e19")
-		)
-		(pin "1"
-			(uuid "fe62906a-6a4f-4a5f-a125-1299c61f971c")
-		)
-		(instances
-			(project "sniffer-wifi"
-				(path "/db70fe1b-d2b4-43f9-a78d-d9b71a224de5"
-					(reference "JP2")
 					(unit 1)
 				)
 			)
@@ -12952,7 +12734,7 @@
 		(fields_autoplaced yes)
 		(uuid "d4b6a93c-d2ba-40f8-b8fa-01660d2f3d1e")
 		(property "Reference" "C13"
-			(at 269.621 138.4878 0)
+			(at 270.51 138.4299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12960,8 +12742,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1n"
-			(at 269.621 140.9121 0)
+		(property "Value" "do not mount"
+			(at 270.51 140.9699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13277,76 +13059,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Jumper:Jumper_2_Open")
-		(at 109.22 173.99 270)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e1da396a-3d7e-49fd-a921-d1d6f6f1686c")
-		(property "Reference" "JP6"
-			(at 111.76 172.7199 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "F3"
-			(at 111.76 175.2599 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 109.22 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 109.22 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Jumper, 2-pole, open"
-			(at 109.22 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "ee794268-fddd-4cd4-a2b6-d5b604d8d502")
-		)
-		(pin "1"
-			(uuid "86d219d9-328b-4e74-ae70-b72eb420434a")
-		)
-		(instances
-			(project "sniffer-wifi"
-				(path "/db70fe1b-d2b4-43f9-a78d-d9b71a224de5"
-					(reference "JP6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 158.75 34.29 0)
 		(unit 1)
@@ -13473,138 +13185,6 @@
 			(project ""
 				(path "/db70fe1b-d2b4-43f9-a78d-d9b71a224de5"
 					(reference "#PWR024")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 124.46 179.07 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e91ec4c8-86d9-4054-a722-427b0fc95d05")
-		(property "Reference" "#PWR051"
-			(at 124.46 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 124.46 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 124.46 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 124.46 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 124.46 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "2991528e-8f0b-401b-9c7c-27ace4abd1b7")
-		)
-		(instances
-			(project "sniffer-wifi"
-				(path "/db70fe1b-d2b4-43f9-a78d-d9b71a224de5"
-					(reference "#PWR051")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 116.84 179.07 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ef02c51d-4d0a-4c2f-835c-9cda91be285b")
-		(property "Reference" "#PWR050"
-			(at 116.84 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 116.84 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 116.84 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 116.84 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 116.84 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d19c1b8b-ca39-40db-a786-71382e37e62f")
-		)
-		(instances
-			(project "sniffer-wifi"
-				(path "/db70fe1b-d2b4-43f9-a78d-d9b71a224de5"
-					(reference "#PWR050")
 					(unit 1)
 				)
 			)
@@ -13742,6 +13322,116 @@
 			(project "sniffer-wifi"
 				(path "/db70fe1b-d2b4-43f9-a78d-d9b71a224de5"
 					(reference "R14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_02x08_Odd_Even")
+		(at 85.09 173.99 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f127fbfc-0515-4034-8eaa-fd45793ac9b5")
+		(property "Reference" "J6"
+			(at 86.36 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "flat number selector"
+			(at 86.36 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_IDC:IDC-Header_2x08_P2.54mm_Latch_Vertical"
+			(at 85.09 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 85.09 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, double row, 02x08, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 85.09 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "16"
+			(uuid "99772a88-404d-4939-92a2-9cdc65659d17")
+		)
+		(pin "9"
+			(uuid "1bee5493-139e-413e-9cdc-56122da99ff6")
+		)
+		(pin "12"
+			(uuid "56401643-eb96-4dab-b05d-4ca7d1dfa6a9")
+		)
+		(pin "14"
+			(uuid "855984fc-c702-46cf-b8bd-1d5a2fe6b80f")
+		)
+		(pin "13"
+			(uuid "59224def-c615-4b7e-beed-08c946ba50d8")
+		)
+		(pin "11"
+			(uuid "45882c4b-d964-45f0-a6e2-92f7ee680b41")
+		)
+		(pin "5"
+			(uuid "c5966acb-1b74-48b8-85ee-5fc41b5e45df")
+		)
+		(pin "15"
+			(uuid "29ae7593-b313-4b36-91dc-8ca5058a32f1")
+		)
+		(pin "7"
+			(uuid "0de78a13-833c-44a9-a1b3-5e3ce701073e")
+		)
+		(pin "2"
+			(uuid "cbdc8124-b750-4323-ba20-5dcf94fe60fd")
+		)
+		(pin "6"
+			(uuid "78adf0e1-d9d9-4dc2-9070-4864f5928dc0")
+		)
+		(pin "4"
+			(uuid "71ecc43a-a9c6-4975-a7ab-8efa2af23740")
+		)
+		(pin "3"
+			(uuid "842dfc7f-093d-4c57-960f-fb945228e306")
+		)
+		(pin "10"
+			(uuid "12752e95-9533-4fa2-9b03-9673fed2e397")
+		)
+		(pin "1"
+			(uuid "e7bc5291-e584-43fe-a940-312e24a72cb2")
+		)
+		(pin "8"
+			(uuid "b22d7ca5-418b-45ca-b6e0-3a511965259c")
+		)
+		(instances
+			(project ""
+				(path "/db70fe1b-d2b4-43f9-a78d-d9b71a224de5"
+					(reference "J6")
 					(unit 1)
 				)
 			)
