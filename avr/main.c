@@ -19,10 +19,17 @@ union Num
 
 void serial_init(void);
 
-#define CYCLE_SIZE	(128)
-#define CYCLE_MASK	(0x7f)
+#define CYCLE_SIZE		(256)
+#define CYCLE_MASK		(0xff)
 
-// start, mod 8 prescaler (2 MHz)
+#define GREEN_PORT		(PORTB)
+#define GREEN_PIN		(0)
+#define RED_PORT		(PORTB)
+#define RED_PIN			(1)
+#define PDCTRL_PORT		(PORTB)
+#define PDCTRL_PIN		(1)
+
+// start, mod 8 prescaler (2.304 MHz)
 #define timer_start() do { TCCR1B = _BV(CS11); } while (0);
 #define timer_stop() do { TCCR1B = 0; } while (0);
 #define cycle_forward(x) do { x = (x + 1) & CYCLE_MASK; } while (0);
@@ -72,7 +79,7 @@ void main(void)
 	sei();
 
 	// enable timer 1 overflow interrupt
-	TIMSK = _BV(TOIE1);
+	TIMSK1 = _BV(TOIE1);
 	// normal timer 1 operation
 	TCCR1A = 0x00;
 	timer_start();
@@ -82,23 +89,25 @@ void main(void)
 	// configure INT0 as falling edge, INT1 as rising edge
 	MCUCR = _BV(ISC01) | _BV(ISC11) | _BV(ISC10);
 	// enable external interrupt
-	GICR = _BV(INT0) | _BV(INT1);
+	EIMSK = _BV(INT0) | _BV(INT1);
 
 	fsm_set_cb(flat_callback);
 	fsm_reset();
 
-	DDRB = 0xff;
+	// pd control, green and red leds are output
+	PORTB = 0x07;
+	DDRB = 0x07;
 
 	while (1)
 	{
 		// heartbeat
 		if (count & 0x0010)
 		{
-			PORTB |= _BV(7);
+			GREEN_PORT |= _BV(GREEN_PIN);
 		}
 		else
 		{
-			PORTB &= ~_BV(7);
+			GREEN_PORT &= ~_BV(GREEN_PIN);
 		}
 		// reset the fsm after several seconds (just in case)
 		if (count & 0x0800)
@@ -114,11 +123,11 @@ void main(void)
 				"rtend"
 			};
 			// publish debug info
-			printf("m:publish(topic..\"debug_last_state\", \"%s\", 2, 0)\r\n", state2string[fsm_get_debug_property(DP_STATE)]);
-			printf("m:publish(topic..\"debug_reset\", \"%s\", 2, 0)\r\n", state2string[fsm_get_debug_property(DP_RESET_PERIOD)]);
-			printf("m:publish(topic..\"debug_end\", \"%s\", 2, 0)\r\n", state2string[fsm_get_debug_property(DP_END_PERIOD)]);
-			printf("m:publish(topic..\"debug_flat_low\", \"%s\", 2, 0)\r\n", state2string[fsm_get_debug_property(DP_FLAT_LOW_PERIOD)]);
-			printf("m:publish(topic..\"debug_flat_high\", \"%s\", 2, 0)\r\n", state2string[fsm_get_debug_property(DP_FLAT_HIGH_PERIOD)]);
+			printf("m:publish(topic..\"debug/last_state\", \"%s\", 2, 0)\r\n", state2string[fsm_get_debug_property(DP_STATE)]);
+			printf("m:publish(topic..\"debug/reset\", \"%s\", 2, 0)\r\n", state2string[fsm_get_debug_property(DP_RESET_PERIOD)]);
+			printf("m:publish(topic..\"debug/end\", \"%s\", 2, 0)\r\n", state2string[fsm_get_debug_property(DP_END_PERIOD)]);
+			printf("m:publish(topic..\"debug/flat_low\", \"%s\", 2, 0)\r\n", state2string[fsm_get_debug_property(DP_FLAT_LOW_PERIOD)]);
+			printf("m:publish(topic..\"debug/flat_high\", \"%s\", 2, 0)\r\n", state2string[fsm_get_debug_property(DP_FLAT_HIGH_PERIOD)]);
 #endif
 			count = 0;
 			fsm_reset();
@@ -128,7 +137,7 @@ void main(void)
 		// process the cyclic buffer of events
 		if (cbegin != cend)
 		{
-			fsm_push_event(ts[cbegin].lsp & 1, ts[cbegin].v32 >> 1);
+			fsm_push_event(ts[cbegin].lsp & 1, (ts[cbegin].v32 & 0xfffffffe) * 868 / 1000);
 			cycle_forward(cbegin);
 		}
 	}
