@@ -12,12 +12,12 @@ clean:
 test: $(PROJECT_TEST)
 
 flash:
-	avrdude -c usbasp -p m16 -U flash:w:main.hex -U lfuse:w:0xC1:m -U hfuse:w:0x99:m -U efuse:w:0xFC:m
+	avrdude -c usbasp -p m328pb -U flash:w:main.hex -U lfuse:w:0xff:m -U hfuse:w:0xda:m -U efuse:w:0xfc:m
 
 $(PROJECT_TEST): unittest.c fsm.c
 	gcc -g -o $@ $^
 
-$(PROJECT): main.c fsm.c serial.c
+$(PROJECT): main.c fsm.c serial.c adc.c
 	avr-gcc -o $@ -mmcu=$(TARGET) -O2 -DDEBUG -DF_CPU=18432000UL $^
 
 %.hex: %

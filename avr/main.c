@@ -71,8 +71,12 @@ void flat_callback(uint8_t flatno)
 	printf("m:publish(topic..\"flat\", %d, 2, 0)\r\n", flatno);
 }
 
+void adc_init(void);
+uint16_t adc_read(void);
+
 void main(void)
 {
+	adc_init();
 	serial_init();
 
 	// enable interrupts
@@ -87,7 +91,7 @@ void main(void)
 	// default INT0 and INT1 config as tri-z input is NOT ok
 	PORTD = _BV(PIND2) | _BV(PIND3);
 	// configure INT0 as falling edge, INT1 as rising edge
-	MCUCR = _BV(ISC01) | _BV(ISC11) | _BV(ISC10);
+	EICRA = _BV(ISC01) | _BV(ISC11) | _BV(ISC10);
 	// enable external interrupt
 	EIMSK = _BV(INT0) | _BV(INT1);
 
@@ -124,20 +128,20 @@ void main(void)
 			};
 			// publish debug info
 			printf("m:publish(topic..\"debug/last_state\", \"%s\", 2, 0)\r\n", state2string[fsm_get_debug_property(DP_STATE)]);
-			printf("m:publish(topic..\"debug/reset\", \"%s\", 2, 0)\r\n", state2string[fsm_get_debug_property(DP_RESET_PERIOD)]);
-			printf("m:publish(topic..\"debug/end\", \"%s\", 2, 0)\r\n", state2string[fsm_get_debug_property(DP_END_PERIOD)]);
-			printf("m:publish(topic..\"debug/flat_low\", \"%s\", 2, 0)\r\n", state2string[fsm_get_debug_property(DP_FLAT_LOW_PERIOD)]);
-			printf("m:publish(topic..\"debug/flat_high\", \"%s\", 2, 0)\r\n", state2string[fsm_get_debug_property(DP_FLAT_HIGH_PERIOD)]);
+			printf("m:publish(topic..\"debug/reset\", %u, 2, 0)\r\n", fsm_get_debug_property(DP_RESET_PERIOD));
+			printf("m:publish(topic..\"debug/end\", %u, 2, 0)\r\n", fsm_get_debug_property(DP_END_PERIOD));
+			printf("m:publish(topic..\"debug/flat_low\", %u, 2, 0)\r\n", fsm_get_debug_property(DP_FLAT_LOW_PERIOD));
+			printf("m:publish(topic..\"debug/flat_high\", %u, 2, 0)\r\n", fsm_get_debug_property(DP_FLAT_HIGH_PERIOD));
 #endif
 			count = 0;
 			fsm_reset();
-			// publish (mocked) idle voltage
-			printf("m:publish(topic..\"idle_voltage\", \"%d.0\", 2, 0)\r\n", 8);
+			// publish idle voltage
+			printf("m:publish(topic..\"idle_voltage\", %d, 2, 0)\r\n", ((uint32_t)adc_read() * 12100) >> 10);
 		}
 		// process the cyclic buffer of events
 		if (cbegin != cend)
 		{
-			fsm_push_event(ts[cbegin].lsp & 1, (ts[cbegin].v32 & 0xfffffffe) * 868 / 1000);
+			fsm_push_event(ts[cbegin].lsp & 1, ((ts[cbegin].v32 >> 1) * 889) >> 10);
 			cycle_forward(cbegin);
 		}
 	}

@@ -34,7 +34,7 @@ uint32_t fsm_get_debug_property(enum DebugProperty dp)
 		case DP_END_PERIOD:
 			return end_period;
 		case DP_FLAT_LOW_PERIOD:
-			return flat_low_sum / flatno;
+			return flatno ? (flat_low_sum / flatno) : flat_low_sum;
 		case DP_FLAT_HIGH_PERIOD:
 			return flat_high_sum / (flatno - 1);
 		default:
