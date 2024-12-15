@@ -168,10 +168,10 @@ void main(void)
 			};
 			// publish debug info
 			printf("m:publish(topic..\"debug/last_state\", \"%s\", 2, 0)\r\n", state2string[fsm_get_debug_property(DP_STATE)]);
-			printf("m:publish(topic..\"debug/reset\", %u, 2, 0)\r\n", fsm_get_debug_property(DP_RESET_PERIOD));
-			printf("m:publish(topic..\"debug/end\", %u, 2, 0)\r\n", fsm_get_debug_property(DP_END_PERIOD));
-			printf("m:publish(topic..\"debug/flat_low\", %u, 2, 0)\r\n", fsm_get_debug_property(DP_FLAT_LOW_PERIOD));
-			printf("m:publish(topic..\"debug/flat_high\", %u, 2, 0)\r\n", fsm_get_debug_property(DP_FLAT_HIGH_PERIOD));
+			printf("m:publish(topic..\"debug/reset\", %lu, 2, 0)\r\n", fsm_get_debug_property(DP_RESET_PERIOD));
+			printf("m:publish(topic..\"debug/end\", %lu, 2, 0)\r\n", fsm_get_debug_property(DP_END_PERIOD));
+			printf("m:publish(topic..\"debug/flat_low\", %lu, 2, 0)\r\n", fsm_get_debug_property(DP_FLAT_LOW_PERIOD));
+			printf("m:publish(topic..\"debug/flat_high\", %lu, 2, 0)\r\n", fsm_get_debug_property(DP_FLAT_HIGH_PERIOD));
 #endif
 
 			// publish the idle voltage
