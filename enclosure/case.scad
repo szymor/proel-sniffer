@@ -5,8 +5,8 @@ w = 50;
 h = 80;
 r = 5;
 
-rim_h = 25;
-pcb_elevation = 3;
+rim_h = 29;
+pcb_elevation = 8;
 pcb_thick = 1.8;
 
 head_d = 8;
@@ -118,13 +118,13 @@ module rim()
 
 module screwstand()
 {
-    cylinder(pcb_elevation, d1 = 10, d2 = 7);
+    cylinder(pcb_elevation, d1 = 9, d2 = 7);
 }
 
 module screwhole()
 {
-    cylinder(2, d = 5);
-    cylinder(thick + pcb_elevation + 1, d = 2.2);
+    //cylinder(2, d = 5);
+    translate([0, 0, thick]) cylinder(pcb_elevation + 1, d = 2.2);
 }
 
 module base()
@@ -153,17 +153,18 @@ echo("Lid screwstand height: ", lid_screwstand_h);
 
 module lid_screwstand()
 {
-    cylinder(lid_screwstand_h, d1 = 12, d2 = 7);
+    cylinder(lid_screwstand_h, d1 = 9, d2 = 7);
 }
 
 module lid_screwhole()
 {
+    translate([0, 0, -thick]) cylinder(lid_screwstand_h + thick - 1, d = 6);
     cylinder(lid_screwstand_h + 0.5, d = 1.9);
 }
 
-module lid_ark_hole()
+module lid_ark_hole(width)
 {
-    square([4.5, 10], true);
+    square([width, 10], true);
 }
 
 module lid()
@@ -175,9 +176,11 @@ module lid()
         {
             linear_extrude(thick) difference()
             {
-                base_shape(w, h, r - thick - tolerance);
-                translate([-w/2-r +2.25, yy_up - 10]) lid_ark_hole();
-                translate([w/2+r -2.25, yy_up - 10]) lid_ark_hole();
+                rr = r - thick - tolerance;
+                base_shape(w, h, rr);
+                ww = 9;
+                translate([-w/2-rr +ww/2, yy_up - 10]) lid_ark_hole(ww);
+                translate([w/2+rr -ww/2, yy_up - 10]) lid_ark_hole(ww);
             }
             translate([xx_left, yy_down, thick]) lid_screwstand();
             translate([xx_right, yy_down, thick]) lid_screwstand();
@@ -201,9 +204,9 @@ module holder()
     }
 }
 
-lid();
-//base();
-//rim();
+//lid();
+base();
+rim();
 //holder();
 //translate([0, 0, rim_h]) rotate([0, 180, 0]) lid();
 
